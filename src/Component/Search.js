@@ -21,7 +21,7 @@ function Search() {
     }})
     .then(res =>{
     setTableData((arr)=>arr.concat(res.data));
-    }).catch(err => {
+    }
     ).catch(err => {
       console.log(err)
     })

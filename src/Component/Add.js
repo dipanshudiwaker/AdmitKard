@@ -7,14 +7,14 @@ import { makeStyles} from '@mui/styles';
 
 const useStyles = makeStyles({
   textField: {
-      width: '30%',
+      width: '45%',
       backgroundColor: "#fff",
       borderRadius: "0.4rem",
       margin: '1rem'
   },
   button: {
       width: '49%',
-      border: "1px solid #fff" ,  
+      border: "1px solid #46024d" ,  
       color: "#fff",
       margin: '0.2rem' 
   }
@@ -50,8 +50,9 @@ function Add(props){
 
     return (
     
-      <form  onSubmit={submit} autoComplete="off" style={{overflow:'hidden'}}> 
-        <DialogTitle style={{color:'white'}}>Add</DialogTitle>
+      <form  onSubmit={submit} autoComplete="off" style={{display:'flex',justifyContent:'center',height:'100%',marginTop:'10%'}}> 
+        <div style={{background:'rgba(0,0,0,0.6)',width:'60%',height:'80%',justifyContent:'center'}} >
+        <h1 style={{color:'#55005e',fontSize:'30px',textAlign:'center'}}>ADD</h1>
         <DialogContent  style= {{ minWidth: "90% !important",maxWidth:'95% !important', height: "100%"} }  >  
           <TextField value={name} label="Name" required variant="filled" className={classes.textField} onChange={(e) =>{setName(e.target.value)}} />
           <TextField value={email} label="Email" required variant="filled" className={classes.textField} onChange={(e) =>{setEmil(e.target.value)}} />
@@ -98,8 +99,9 @@ function Add(props){
             />
           </LocalizationProvider>
           <Button type="submit" className={classes.button}>Add</Button>
-          <Button onClick={handleCloseAdd} className={classes.button}>Canncel</Button>
+          <Button onClick={handleCloseAdd} className={classes.button}>Cancel</Button>
         </DialogContent>
+        </div>
       </form>
   );
 }

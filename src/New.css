@@ -1,0 +1,12 @@
+.Nav-Buttons{
+    padding-top: 1vmax;
+    display: flex;
+    flex-direction: row;
+}
+
+.Nav-Buttons .Button{
+    padding: 1vmax;
+    margin-left: 1vmax;
+    border: 2px solid #46024d;
+    border-radius: 10px;
+}

@@ -53,8 +53,8 @@ function Add(props){
        <form  onSubmit={submit}
       autoComplete="off"
       style={{overflow:'hidden'}}> 
-      <DialogTitle style={{backgroundColor:'#283d4a',color:'white'}}>Add</DialogTitle>
-      <DialogContent  style= {{ minWidth: "90% !important",maxWidth:'95% !important', height: "100%",backgroundColor:'#283d4a' } }  >  
+      <DialogTitle style={{color:'white'}}>Add</DialogTitle>
+      <DialogContent  style= {{ minWidth: "90% !important",maxWidth:'95% !important', height: "100%"} }  >  
       <TextField value={name} label="Name" required variant="filled" style={{backgroundColor:'white', margin:'10px',borderRadius:'5px',width:'300px'}} onChange={(e) =>{setName(e.target.value)}} />
       <TextField value={email} label="Email" required variant="filled" style={{backgroundColor:'white', margin:'10px',borderRadius:'5px',width:'300px'}} onChange={(e) =>{setEmil(e.target.value)}} />
       <TextField value={contact} label="Conatct Number" required variant="filled" style={{backgroundColor:'white', margin:'10px',borderRadius:'5px',width:'300px'}} onChange={(e) =>{setContact(e.target.value)}} />

@@ -7,7 +7,7 @@ import { makeStyles} from '@mui/styles';
 
 const useStyles = makeStyles({
   textField: {
-      width: '22.5%',
+      width: '30%',
       backgroundColor: "#fff",
       borderRadius: "0.4rem",
       margin: '1rem'
@@ -56,7 +56,7 @@ function Add(props){
           <TextField value={name} label="Name" required variant="filled" className={classes.textField} onChange={(e) =>{setName(e.target.value)}} />
           <TextField value={email} label="Email" required variant="filled" className={classes.textField} onChange={(e) =>{setEmil(e.target.value)}} />
           <TextField value={contact} label="Conatct Number" required variant="filled" className={classes.textField} onChange={(e) =>{setContact(e.target.value)}} />
-          <FormControl required sx={{ m: 1, minWidth: 120,background:'white' }}>
+          <FormControl required className={classes.textField} variant="filled">
             <InputLabel id="demo-simple-select-required-label">Course Level</InputLabel>
               <Select
                 labelId="demo-simple-select-required-label"
@@ -70,7 +70,7 @@ function Add(props){
                 <MenuItem value={'UG'}>UG</MenuItem>
               </Select>
           </FormControl>
-          <FormControl required sx={{ m: 1, minWidth: 120,background:'white' }}>
+          <FormControl required className={classes.textField} variant="filled">
             <InputLabel id="demo-simple-select-required-label">Country Preference</InputLabel>
               <Select
                 labelId="demo-simple-select-required-label"
@@ -89,14 +89,12 @@ function Add(props){
                 <MenuItem value={'Germany'}>Germany</MenuItem>
               </Select>
           </FormControl>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <LocalizationProvider dateAdapter={AdapterDateFns} >
             <DatePicker 
               label="Date Of Birth"  
               value={dob}
-              onChange={(newValue) => {
-              setDob(newValue);
-            }}
-            renderInput={(params) => <TextField required  className={classes.textField}  {...params} />}
+              onChange={(newValue) => {setDob(newValue);}}
+              renderInput={(params) => <TextField required variant="filled" className={classes.textField}  {...params} />}
             />
           </LocalizationProvider>
           <Button type="submit" className={classes.button}>Add</Button>

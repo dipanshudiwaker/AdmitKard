@@ -1,19 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Button from '@mui/material/Button'; 
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
+import {TextField,Button,DialogContent,DialogTitle,InputLabel,MenuItem,FormControl,Select} from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DatePicker from '@mui/lab/DatePicker';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import {LocalizationProvider,DatePicker} from '@mui/lab';
 
 function Add(props){
 

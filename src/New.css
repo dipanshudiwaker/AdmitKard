@@ -4,9 +4,14 @@
     flex-direction: row;
 }
 
+
 .Nav-Buttons .Button{
-    padding: 1vmax;
+    padding: 2.5vmax;
     margin-left: 1vmax;
-    border: 2px solid #46024d;
+    border: 2px solid white;
     border-radius: 10px;
+}
+
+.Button:hover{
+    background-color: #46024d;
 }

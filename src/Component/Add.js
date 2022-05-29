@@ -6,17 +6,30 @@ import {LocalizationProvider,DatePicker} from '@mui/lab';
 import { makeStyles} from '@mui/styles';
 
 const useStyles = makeStyles({
+  form:{
+    boxShadow:'0px 8px 16px 0px rgb(122,194,203,0.5)',
+  marginLeft:'20%',
+  marginRight:'20%',
+    marginTop:'5%',
+    padding:'2%',
+    background:'rgba(0,0,0,0.6)',
+    width:'50%',
+    height:'90% !important'
+
+  },
   textField: {
       width: '45%',
-      backgroundColor: "#fff",
+      backgroundColor: "white",
       borderRadius: "0.4rem",
-      margin: '1rem'
+      margin: '5px ! important',
+      padding:"5px ! important",
+      
   },
   button: {
-      width: '49%',
-      border: "1px solid #46024d" ,  
-      color: "#fff",
-      margin: '0.2rem' 
+      width: '100%',
+      border: "2px solid rgb(122,194,203) !important" ,  
+   marginTop:'20px ! important'
+
   }
 });
 
@@ -24,9 +37,7 @@ function Add(props){
 
     const classes = useStyles();
 
-    const {openAdd,setOpenAdd} = props;
 
-    const handleCloseAdd = () => {setOpenAdd(false);};
   
     const[name,setName]=useState('');
     const[email,setEmil]=useState('');
@@ -45,15 +56,17 @@ function Add(props){
     const submit = event => {
       event.preventDefault();
       addInfo();
-      handleCloseAdd();
+    
     };
 
     return (
     
-      <form  onSubmit={submit} autoComplete="off" style={{display:'flex',justifyContent:'center',height:'100%',marginTop:'10%'}}> 
-        <div style={{background:'rgba(0,0,0,0.6)',width:'60%',height:'80%',justifyContent:'center'}} >
-        <h1 style={{color:'#55005e',fontSize:'30px',textAlign:'center'}}>ADD</h1>
-        <DialogContent  style= {{ minWidth: "90% !important",maxWidth:'95% !important', height: "100%"} }  >  
+      <form  onSubmit={submit} autoComplete="off" className={classes.form}> 
+        <div style={{}}>
+            <h1 style={{color:'rgb(107 170 179)',fontSize:'30px'}}>New User Details</h1>
+        </div>
+
+        <div  style= {{ } }  >  
           <TextField value={name} label="Name" required variant="filled" className={classes.textField} onChange={(e) =>{setName(e.target.value)}} />
           <TextField value={email} label="Email" required variant="filled" className={classes.textField} onChange={(e) =>{setEmil(e.target.value)}} />
           <TextField value={contact} label="Conatct Number" required variant="filled" className={classes.textField} onChange={(e) =>{setContact(e.target.value)}} />
@@ -72,7 +85,8 @@ function Add(props){
           </FormControl>
           <FormControl required className={classes.textField} variant="filled">
             <InputLabel id="demo-simple-select-required-label">Country Preference</InputLabel>
-              <Select
+              <Select 
+             
                 labelId="demo-simple-select-required-label"
                 id="demo-simple-select-required"
                 value={preference}
@@ -98,9 +112,8 @@ function Add(props){
             />
           </LocalizationProvider>
           <Button type="submit" className={classes.button}>Add</Button>
-          <Button onClick={handleCloseAdd} className={classes.button}>Cancel</Button>
-        </DialogContent>
         </div>
+       
       </form>
   );
 }

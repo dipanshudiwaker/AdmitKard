@@ -66,7 +66,6 @@ function Add(props){
                 label="Course Level"
                 onChange={(e) =>{setLevel(e.target.value)}}
               >
-                <MenuItem value="">None</MenuItem>
                 <MenuItem value={'PG'}>PG</MenuItem>
                 <MenuItem value={'UG'}>UG</MenuItem>
               </Select>
@@ -80,7 +79,7 @@ function Add(props){
                 label="Country Prefrence"
                 onChange={(e) =>{setPreference(e.target.value)}}
               >
-                <MenuItem value="">None</MenuItem>
+                
                 <MenuItem value={'USA'}>USA</MenuItem>
                 <MenuItem value={'Austraila'}>Austraila</MenuItem>
                 <MenuItem value={'New-Zealand'}>New-Zealand</MenuItem>
@@ -95,7 +94,7 @@ function Add(props){
               label="Date Of Birth"  
               value={dob}
               onChange={(newValue) => {setDob(newValue);}}
-              renderInput={(params) => <TextField required variant="filled" className={classes.textField}  {...params} />}
+              renderInput={(params) => <TextField  variant="filled" className={classes.textField}  {...params} />}
             />
           </LocalizationProvider>
           <Button type="submit" className={classes.button}>Add</Button>
